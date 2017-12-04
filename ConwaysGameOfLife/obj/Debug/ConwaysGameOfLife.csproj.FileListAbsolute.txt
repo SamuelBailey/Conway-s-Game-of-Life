@@ -1,0 +1,10 @@
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\bin\Debug\ConwaysGameOfLife.exe.config
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\bin\Debug\ConwaysGameOfLife.exe
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\bin\Debug\ConwaysGameOfLife.pdb
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.csprojResolveAssemblyReference.cache
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.Form1.resources
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.Properties.Resources.resources
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.csproj.GenerateResource.Cache
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.csproj.CoreCompileInputs.cache
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.exe
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.pdb
