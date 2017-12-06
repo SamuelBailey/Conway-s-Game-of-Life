@@ -66,6 +66,12 @@ namespace ConwaysGameOfLife
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            if (gridScaleBox.Text == "" || gridSizeBox.Text == "")
+            {
+                MessageBox.Show("ERROR: Enter size and scale into text boxes");
+                return;
+            }
+
             if (gridScaleBox.Text != "")
                 gridScale = Convert.ToInt32(gridScaleBox.Text);
             lifeGrid = new LifeGrid(new bool[Convert.ToInt32(gridSizeBox.Text), Convert.ToInt32(gridSizeBox.Text)]);
@@ -133,6 +139,11 @@ namespace ConwaysGameOfLife
 
         private void startStopButton_Click(object sender, EventArgs e)
         {
+            if (delayBox.Text == "")
+            {
+                MessageBox.Show("ERROR: No delay time set");
+                return;
+            }
             isRunning = !isRunning;
             if (isRunning)
             {
@@ -163,6 +174,11 @@ namespace ConwaysGameOfLife
 
         private void randomiseButton_Click(object sender, EventArgs e)
         {
+            if (randomChanceBox.Text == "")
+            {
+                MessageBox.Show("ERROR: No random chance.");
+                return;
+            }
             for (int i = 0; i < lifeGrid.grid.GetLength(0); i++)
             {
                 for (int j = 0; j < lifeGrid.grid.GetLength(1); j++)
