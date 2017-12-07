@@ -42,6 +42,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.randomChanceBox = new System.Windows.Forms.TextBox();
             this.randomiseButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.updateLabel = new System.Windows.Forms.Label();
+            this.benchmarkButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // resetButton
@@ -49,7 +52,7 @@
             this.resetButton.Location = new System.Drawing.Point(12, 12);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
-            this.resetButton.TabIndex = 1;
+            this.resetButton.TabIndex = 0;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
@@ -69,7 +72,8 @@
             this.gridSizeBox.Location = new System.Drawing.Point(11, 146);
             this.gridSizeBox.Name = "gridSizeBox";
             this.gridSizeBox.Size = new System.Drawing.Size(100, 20);
-            this.gridSizeBox.TabIndex = 3;
+            this.gridSizeBox.TabIndex = 4;
+            this.gridSizeBox.Text = "10";
             this.gridSizeBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridSizeBox_KeyPress);
             // 
             // label1
@@ -78,7 +82,7 @@
             this.label1.Location = new System.Drawing.Point(30, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 10;
             this.label1.Text = "Delay (ms)";
             // 
             // contextMenuStrip1
@@ -92,6 +96,7 @@
             this.delayBox.Name = "delayBox";
             this.delayBox.Size = new System.Drawing.Size(100, 20);
             this.delayBox.TabIndex = 6;
+            this.delayBox.Text = "1";
             this.delayBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.delayBox_KeyPress);
             // 
             // label2
@@ -100,7 +105,7 @@
             this.label2.Location = new System.Drawing.Point(37, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 7;
+            this.label2.TabIndex = 8;
             this.label2.Text = "Grid Size";
             // 
             // startStopButton
@@ -108,7 +113,7 @@
             this.startStopButton.Location = new System.Drawing.Point(13, 101);
             this.startStopButton.Name = "startStopButton";
             this.startStopButton.Size = new System.Drawing.Size(75, 23);
-            this.startStopButton.TabIndex = 8;
+            this.startStopButton.TabIndex = 3;
             this.startStopButton.Text = "Start/Stop";
             this.startStopButton.UseVisualStyleBackColor = true;
             this.startStopButton.Click += new System.EventHandler(this.startStopButton_Click);
@@ -118,7 +123,8 @@
             this.gridScaleBox.Location = new System.Drawing.Point(10, 195);
             this.gridScaleBox.Name = "gridScaleBox";
             this.gridScaleBox.Size = new System.Drawing.Size(100, 20);
-            this.gridScaleBox.TabIndex = 9;
+            this.gridScaleBox.TabIndex = 5;
+            this.gridScaleBox.Text = "10";
             this.gridScaleBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridScaleBox_KeyPress);
             // 
             // label3
@@ -127,7 +133,7 @@
             this.label3.Location = new System.Drawing.Point(31, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 9;
             this.label3.Text = "Grid Scale";
             // 
             // label4
@@ -144,7 +150,8 @@
             this.randomChanceBox.Location = new System.Drawing.Point(13, 276);
             this.randomChanceBox.Name = "randomChanceBox";
             this.randomChanceBox.Size = new System.Drawing.Size(100, 20);
-            this.randomChanceBox.TabIndex = 12;
+            this.randomChanceBox.TabIndex = 7;
+            this.randomChanceBox.Text = "500";
             this.randomChanceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.randomChanceBox_KeyPress);
             // 
             // randomiseButton
@@ -152,16 +159,47 @@
             this.randomiseButton.Location = new System.Drawing.Point(13, 41);
             this.randomiseButton.Name = "randomiseButton";
             this.randomiseButton.Size = new System.Drawing.Size(75, 23);
-            this.randomiseButton.TabIndex = 13;
+            this.randomiseButton.TabIndex = 1;
             this.randomiseButton.Text = "Randomise";
             this.randomiseButton.UseVisualStyleBackColor = true;
             this.randomiseButton.Click += new System.EventHandler(this.randomiseButton_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 380);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "updates per second";
+            // 
+            // updateLabel
+            // 
+            this.updateLabel.AutoSize = true;
+            this.updateLabel.Location = new System.Drawing.Point(30, 403);
+            this.updateLabel.Name = "updateLabel";
+            this.updateLabel.Size = new System.Drawing.Size(68, 13);
+            this.updateLabel.TabIndex = 15;
+            this.updateLabel.Text = "UpdateLabel";
+            // 
+            // benchmarkButton
+            // 
+            this.benchmarkButton.Location = new System.Drawing.Point(15, 354);
+            this.benchmarkButton.Name = "benchmarkButton";
+            this.benchmarkButton.Size = new System.Drawing.Size(75, 23);
+            this.benchmarkButton.TabIndex = 16;
+            this.benchmarkButton.Text = "Benchmark";
+            this.benchmarkButton.UseVisualStyleBackColor = true;
+            this.benchmarkButton.Click += new System.EventHandler(this.benchmarkButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 813);
+            this.Controls.Add(this.benchmarkButton);
+            this.Controls.Add(this.updateLabel);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.randomiseButton);
             this.Controls.Add(this.randomChanceBox);
             this.Controls.Add(this.label4);
@@ -195,6 +233,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox randomChanceBox;
         private System.Windows.Forms.Button randomiseButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label updateLabel;
+        private System.Windows.Forms.Button benchmarkButton;
     }
 }
 

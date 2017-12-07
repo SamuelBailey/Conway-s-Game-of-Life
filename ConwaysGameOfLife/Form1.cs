@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Alea.Parallel;
 
 namespace ConwaysGameOfLife
 {
@@ -14,20 +15,27 @@ namespace ConwaysGameOfLife
     {
         int gridScale = 25;
         bool isRunning;
+        bool isBenchmarking;
         PictureBox gameOfLifeBox;
         LifeGrid lifeGrid;
         Timer timer;
+        Timer benchmarkTimer;
+        int frames;
         Random rnd;
 
         public Form1()
         {
             InitializeComponent();
             timer = new Timer();
+            benchmarkTimer = new Timer();
             rnd = new Random();
             timer.Tick += new EventHandler(timer_Tick);
+            benchmarkTimer.Tick += new EventHandler(benchmarkTimer_Tick);
             GameOfLifeBoxInit();
             lifeGrid = new LifeGrid(new bool[20, 20]);
             isRunning = false;
+            isBenchmarking = false;
+            frames = 0;
         }
 
         void GameOfLifeBoxInit()
@@ -41,7 +49,17 @@ namespace ConwaysGameOfLife
         void timer_Tick(object sender, EventArgs e)
         {
             lifeGrid.grid = lifeGrid.CalculateNextFrame();
-            DrawGrid(lifeGrid.grid);
+            if (!isBenchmarking)
+            {
+                DrawGrid(lifeGrid.grid);
+            }
+            frames++;
+        }
+
+        void benchmarkTimer_Tick(object sender, EventArgs e)
+        {
+            updateLabel.Text = frames.ToString();
+            frames = 0;
         }
 
         private void gameOfLifeBox_Click(object sender, EventArgs e)
@@ -85,6 +103,7 @@ namespace ConwaysGameOfLife
 
             Bitmap grid = new Bitmap(boolArray.GetLength(0) * gridScale, boolArray.GetLength(1) * gridScale);
             Graphics gridGraphics = Graphics.FromImage(grid);
+
             for (int i = 0; i < boolArray.GetLength(0); i++)
             {
                 for (int j = 0; j < boolArray.GetLength(1); j++)
@@ -117,7 +136,10 @@ namespace ConwaysGameOfLife
 
         private void nextFrameButton_Click(object sender, EventArgs e)
         {
-            lifeGrid.grid = lifeGrid.CalculateNextFrame();
+            for (int i = 0; i < 100; i++)
+            {
+                lifeGrid.grid = lifeGrid.CalculateNextFrame();
+            }            
             DrawGrid(lifeGrid.grid);
         }
 
@@ -194,6 +216,20 @@ namespace ConwaysGameOfLife
                 }
             }
             DrawGrid(lifeGrid.grid);
+        }
+
+        private void benchmarkButton_Click(object sender, EventArgs e)
+        {
+            isBenchmarking = !isBenchmarking;
+            if (isBenchmarking)
+            {
+                benchmarkTimer.Interval = 1000;
+                benchmarkTimer.Start();
+            }
+            else
+            {
+                benchmarkTimer.Stop();
+            }
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Alea;
+using Alea.Parallel;
 
 namespace ConwaysGameOfLife
 {
@@ -36,37 +38,110 @@ namespace ConwaysGameOfLife
             }
         }
 
+        [GpuManaged]
         public bool[,] CalculateNextFrame()
         {
             bool[,] tempBoolArray = new bool[grid.GetLength(0), grid.GetLength(1)];
+
+            //Parallel.For(0, grid.GetLength(0), (i) =>
             for (int i = 0; i < grid.GetLength(0); i++)
             {
-                for (int j = 0; j < grid.GetLength(0); j++)
+                int cellCount = 0;
+                int xLength = grid.GetLength(0);
+                int yLength = grid.GetLength(1);
+                bool[] row = new bool[grid.GetLength(1)];
+                Buffer.BlockCopy(rectArray, doubleSize * d2 * rowToGet, target, 0, doubleSize * d2);
+                Gpu.Default.For(0, grid.GetLength(1), (j) =>
+                //for (int j = 0; j < grid.GetLength(1); j++)
                 {
-                    tempBoolArray[j, i] = CalculateCell(j, i, grid);
-                }
-            }
+                    //tempBoolArray[j, i] = CalculateCell(j, i, grid);
+                    //for (int y = -1; y <= 1; y++)
+                    //{
+                    //    for (int x = -1; x <= 1; x++)
+                    //    {
+                    //        if (x != 0 || y != 0)
+                    //        {
+                    //            int xOffset = (j + x) % grid.GetLength(0);
+                    //            int yOffset = (i + y) % grid.GetLength(1);
+
+                    //            if (xOffset < 0)
+                    //                xOffset += grid.GetLength(0);
+                    //            if (yOffset < 0)
+                    //                yOffset += grid.GetLength(1);
+
+                    //            if (grid[xOffset, yOffset])
+                    //            {
+                    //                cellCount++;
+                    //            }
+                    //        }
+                    //    }
+                    //}
+                    //if (cellCount < 2 || cellCount > 3)
+                    //{
+                    //    tempBoolArray[j, i] = false;
+                    //}
+                    //else if (cellCount == 3)
+                    //{
+                    //    tempBoolArray[j, i] = true;
+                    //}
+                    //else
+                    //{
+                    //    tempBoolArray[j, i] = grid[j, i];
+                    //}
+                    for (int y = -1; y <= 1; y++)
+                    {
+                        for (int x = -1; x <= 1; x++)
+                        {
+                            if (x != 0 || y != 0)
+                            {
+                                int xOffset = (j + x) % xLength;
+                                int yOffset = (i + y) % yLength;
+
+                                if (xOffset < 0)
+                                    xOffset += xLength;
+                                if (yOffset < 0)
+                                    yOffset += yLength;
+
+                                if (grid[xOffset, yOffset])
+                                {
+                                    cellCount++;
+                                }
+                            }
+                            //tempBoolArray[j, i] = true;
+                        }                        
+                    }
+                });
+            }//);
+
+            //for (int i = 0; i < grid.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < grid.GetLength(0); j++)
+            //    {
+            //        tempBoolArray[j, i] = CalculateCell(j, i, grid);
+            //    }
+            //}
             return tempBoolArray;
         }
 
-        bool CalculateCell(int xPos, int yPos, bool[,] boolArray)
+        bool CalculateCell(int j, int i, bool[,] grid)
         {
             int cellCount = 0;
-            for (int i = -1; i <= 1; i++)
+
+            for (int y = -1; y <= 1; y++)
             {
-                for (int j = -1; j <= 1; j++)
+                for (int x = -1; x <= 1; x++)
                 {
-                    if (j != 0 || i != 0)
+                    if (x != 0 || y != 0)
                     {
-                        int xOffset = (xPos + j) % boolArray.GetLength(0);
-                        int yOffset = (yPos + i) % boolArray.GetLength(1);
-
+                        int xOffset = (j + x) % grid.GetLength(0);
+                        int yOffset = (i + y) % grid.GetLength(1);
+            
                         if (xOffset < 0)
-                            xOffset += boolArray.GetLength(0);
+                            xOffset += grid.GetLength(0);
                         if (yOffset < 0)
-                            yOffset += boolArray.GetLength(1);
-
-                        if (boolArray[xOffset, yOffset])
+                            yOffset += grid.GetLength(1);
+            
+                        if (grid[xOffset, yOffset])
                         {
                             cellCount++;
                         }
@@ -83,7 +158,7 @@ namespace ConwaysGameOfLife
             }
             else
             {
-                return boolArray[xPos, yPos];
+                return grid[j, i];
             }
         }
     }

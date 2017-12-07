@@ -32,6 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Alea">
+      <HintPath>..\..\..\..\..\..\..\..\Alea.3.0.4\lib\net45\Alea.dll</HintPath>
+    </Reference>
+    <Reference Include="Alea.IL">
+      <HintPath>..\..\..\..\..\..\..\..\Alea.3.0.4\lib\net45\Alea.IL.dll</HintPath>
+    </Reference>
+    <Reference Include="Alea.Parallel">
+      <HintPath>..\..\..\..\..\..\..\..\Alea.3.0.4\lib\net45\Alea.Parallel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

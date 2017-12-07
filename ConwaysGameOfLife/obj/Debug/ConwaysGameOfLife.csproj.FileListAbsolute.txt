@@ -5,6 +5,11 @@ C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGa
 C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.Form1.resources
 C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.Properties.Resources.resources
 C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.csproj.GenerateResource.Cache
-C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.csproj.CoreCompileInputs.cache
 C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.exe
 C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\obj\Debug\ConwaysGameOfLife.pdb
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\bin\Debug\Alea.dll
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\bin\Debug\Alea.IL.dll
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\bin\Debug\Alea.Parallel.dll
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\bin\Debug\FSharp.Core.dll
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\bin\Debug\Alea.xml
+C:\Users\srb\Documents\Training\Conways-game-of-life\My-implementation\ConwaysGameOfLife\ConwaysGameOfLife\bin\Debug\FSharp.Core.xml
