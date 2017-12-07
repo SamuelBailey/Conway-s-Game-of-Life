@@ -70,6 +70,7 @@
             this.gridSizeBox.Name = "gridSizeBox";
             this.gridSizeBox.Size = new System.Drawing.Size(100, 20);
             this.gridSizeBox.TabIndex = 3;
+            this.gridSizeBox.Text = "10";
             this.gridSizeBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridSizeBox_KeyPress);
             // 
             // label1
@@ -92,6 +93,7 @@
             this.delayBox.Name = "delayBox";
             this.delayBox.Size = new System.Drawing.Size(100, 20);
             this.delayBox.TabIndex = 6;
+            this.delayBox.Text = "1";
             this.delayBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.delayBox_KeyPress);
             // 
             // label2
@@ -119,6 +121,7 @@
             this.gridScaleBox.Name = "gridScaleBox";
             this.gridScaleBox.Size = new System.Drawing.Size(100, 20);
             this.gridScaleBox.TabIndex = 9;
+            this.gridScaleBox.Text = "10";
             this.gridScaleBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridScaleBox_KeyPress);
             // 
             // label3
@@ -145,6 +148,7 @@
             this.randomChanceBox.Name = "randomChanceBox";
             this.randomChanceBox.Size = new System.Drawing.Size(100, 20);
             this.randomChanceBox.TabIndex = 12;
+            this.randomChanceBox.Text = "500";
             this.randomChanceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.randomChanceBox_KeyPress);
             // 
             // randomiseButton
